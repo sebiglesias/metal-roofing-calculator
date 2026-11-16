@@ -1,0 +1,15 @@
+{
+  "name": "Metal Roofing Calculator \u2014 Corrugated & Standing Seam Panels",
+  "short_name": "Metal Roof Calc",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#090a18",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

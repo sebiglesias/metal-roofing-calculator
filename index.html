@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metal Roofing Calculator — Corrugated & Standing Seam Panels — Accurate Material Estimator</title>
+  <meta name="description" content="Calculate exact metal roof panel counts, individual panel cut length, ridge cap footage, and screws with EPDM washers.">
+  <link rel="canonical" href="https://sebiglesias.com.ar/metal-roofing-calculator/">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Metal Roofing Calculator — Corrugated & Standing Seam Panels">
+  <meta property="og:description" content="Calculate exact metal roof panel counts, individual panel cut length, ridge cap footage, and screws with EPDM washers.">
+  <meta property="og:url" content="https://sebiglesias.com.ar/metal-roofing-calculator/">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BNDBQP0W7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2BNDBQP0W7');
+  </script>
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-3381238987477190">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3381238987477190" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Metal Roofing Calculator \u2014 Corrugated & Standing Seam Panels",
+    "url": "https://sebiglesias.com.ar/metal-roofing-calculator/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "Calculate exact metal roof panel counts, individual panel cut length, ridge cap footage, and screws with EPDM washers.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between Ag-Panel and Standing Seam metal roofs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ag-Panel (Tuff-Rib) uses exposed screws driven through the 36-inch wide face of the metal panel into the purlins below. Standing Seam panels (12\" to 18\" wide) interlock over hidden clips with zero exposed screws, eliminating potential screw-washer leaks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many screws are needed per square of metal roofing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For 36-inch wide corrugated panels, plan for approximately 75 to 80 screws per roofing square (100 sq ft). Screws are driven on both sides of every high rib along the eaves and ridge, and every other rib across interior purlins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How far should metal roof panels overhang into the gutter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Metal panels should overhang the fascia board or drip edge by 1.5 to 2.0 inches. Overhanging less than 1.5 inches causes rainwater to wick backwards onto the fascia; overhanging more than 2 inches risks water shooting over the gutter in downpours."
+        }
+      }
+    ]
+  }
+]
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">🏗️ Metal Roofing Alliance Standards</div>
+      <h1>Metal Roofing Panel & Fastener Calculator</h1>
+      <p class="subtitle">Calculate panel counts for 36" corrugated or 16" standing seam metal roofs, ridge caps, trim, and screws.</p>
+    </header>
+
+    <!-- AdSense Top Banner -->
+    <div style="text-align:center; margin: 16px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3381238987477190"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="calc-grid">
+      <!-- Inputs Card -->
+      <form class="card" id="metal-roofing-calculator-form" onsubmit="event.preventDefault();">
+        <h2>📐 Roof Dimensions & Panel Profile</h2>
+        
+        <div class="input-row">
+          <div class="form-group">
+            <label for="ridgeLen">Ridge Length <span class="hint">Length along the peak</span></label>
+            <div class="input-wrap">
+              <input type="number" id="ridgeLen" step="1" min="4" value="40" required>
+              <span class="input-suffix">ft</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rafterLen">Rafter Slope Length <span class="hint">Eaves up to ridge</span></label>
+            <div class="input-wrap">
+              <input type="number" id="rafterLen" step="0.5" min="4" value="16" required>
+              <span class="input-suffix">ft</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="form-group">
+            <label for="panelType">Panel Coverage Profile</label>
+            <select id="panelType">
+              <option value="36" selected>36-Inch (Tuff-Rib / Ag-Panel Corrugated)</option>
+              <option value="16">16-Inch (Standing Seam Concealed Fastener)</option>
+              <option value="24">24-Inch (Commercial R-Panel)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="roofStyle">Roof Configuration</label>
+            <select id="roofStyle">
+              <option value="2" selected>Gable Roof (2 Slopes)</option>
+              <option value="1">Shed / Lean-To (1 Slope)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="eaveOverhang">Eave Drip Overhang <span class="hint">Standard overhang into gutter</span></label>
+          <div class="input-wrap">
+            <input type="number" id="eaveOverhang" step="0.5" min="0" max="6" value="2">
+            <span class="input-suffix">inches</span>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Results Card -->
+      <div class="card">
+        <h2>🎯 Roofing Order Specifications</h2>
+        
+        <div class="result-hero">
+          <div class="result-label">Total Panels Required</div>
+          <div class="result-number" id="totalPanels">28</div>
+          <div class="result-label" style="color:#ffffff;">Custom Cut Metal Panels</div>
+          <div style="font-size:0.95rem; color:#c7d2fe; margin-top:6px;" id="cutLengthText">Cut to Exactly 16 ft 2 inches each</div>
+        </div>
+
+        <div class="sub-hero-grid">
+          <div class="sub-hero-col">
+            <div class="sub-hero-label">Roofing Screws (EPDM)</div>
+            <div class="sub-hero-val" id="screwsCount">1,800 Screws</div>
+            <div class="sub-hero-sub">≈ 2 Boxes (1,000 pk)</div>
+          </div>
+          <div class="sub-hero-col">
+            <div class="sub-hero-label">Ridge Cap Trim</div>
+            <div class="sub-hero-val" id="ridgeCap">40 Linear ft</div>
+            <div class="sub-hero-sub">4× 10.5-ft Trim Pieces</div>
+          </div>
+        </div>
+
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-desc">Total Roof Area</div>
+            <div class="spec-val" id="roofArea">1,280 sq ft</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-desc">Roofing Squares</div>
+            <div class="spec-val" id="roofSquares">12.8 Squares</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-desc">Eave & Rake Drip Edge</div>
+            <div class="spec-val" id="dripEdge">144 Linear ft</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-desc">Foam Closure Strips</div>
+            <div class="spec-val" id="closureStrips">28 Strips (3ft each)</div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Amazon Supplies Box -->
+    <section class="supplies-card">
+      <h3>🛠️ Recommended Tools, Hardware & Building Supplies</h3>
+      <div class="supplies-grid">
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">Self-Drilling Metal Roofing Screws #10 with EPDM Washers (1000 Pack)</div>
+            <div class="supply-desc">Mechanical galvanized colored hex head screws with sealing neoprene rubber washers.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=metal+roofing+screws+epdm+washers+1000&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">Universal Inside & Outside Foam Closure Strips (Pack of 20)</div>
+            <div class="supply-desc">Contoured high-density foam seals valleys, eaves, and ridge caps against wasps, snow, and rain.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=metal+roof+foam+closure+strips&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">Malco Sheet Metal Hand Seamer (3-Inch Forged)</div>
+            <div class="supply-desc">Essential hand bending tool for hemming drip edges, valley eaves, and flashing transition bends.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=sheet+metal+hand+seamer+3+inch&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">Double-Sided Butyl Lap Tape for Metal Roofing</div>
+            <div class="supply-desc">Non-drying 100% solid butyl adhesive seal for horizontal metal panel end-laps and trims.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=butyl+tape+metal+roof+lap&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+      </div>
+      <p style="font-size:0.75rem; color:#94a3b8; margin-top:14px; margin-bottom:0; text-align:center;">
+        ⚖️ <em>Affiliate Notice: As an Amazon Associate, this site earns from qualifying purchases at no additional cost to you. We strictly link to trade-grade construction tools, hardware, and safety materials.</em>
+      </p>
+    </section>
+
+    <!-- FAQ Section for SEO -->
+    <section class="faq-section">
+      <h2 style="font-size:1.35rem; color:#ffffff; margin-bottom:16px;">Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">What is the difference between Ag-Panel and Standing Seam metal roofs?</div>
+        <div class="faq-a">Ag-Panel (Tuff-Rib) uses exposed screws driven through the 36-inch wide face of the metal panel into the purlins below. Standing Seam panels (12" to 18" wide) interlock over hidden clips with zero exposed screws, eliminating potential screw-washer leaks.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How many screws are needed per square of metal roofing?</div>
+        <div class="faq-a">For 36-inch wide corrugated panels, plan for approximately 75 to 80 screws per roofing square (100 sq ft). Screws are driven on both sides of every high rib along the eaves and ridge, and every other rib across interior purlins.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How far should metal roof panels overhang into the gutter?</div>
+        <div class="faq-a">Metal panels should overhang the fascia board or drip edge by 1.5 to 2.0 inches. Overhanging less than 1.5 inches causes rainwater to wick backwards onto the fascia; overhanging more than 2 inches risks water shooting over the gutter in downpours.</div>
+      </div>
+    </section>
+
+    <!-- Bottom AdSense Banner -->
+    <div style="text-align:center; margin: 32px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3381238987477190"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <footer>
+      <p>© 2026 <a href="https://sebiglesias.com.ar/">sebiglesias.com.ar</a> · Metal Roofing Calculator — Corrugated & Standing Seam Panels. Educational and trade reference tool.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
